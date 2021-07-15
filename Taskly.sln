@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{099C8019-BF4E-4706-9CE8-F26B4BFA888A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceLayer", "ServiceLayer\ServiceLayer.csproj", "{39E02DE9-F1C1-4509-B35D-DCB05F878BC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{BE17D882-BF9F-4E01-87DD-6A8BDAC458AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{099C8019-BF4E-4706-9CE8-F26B4BFA888A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{099C8019-BF4E-4706-9CE8-F26B4BFA888A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{099C8019-BF4E-4706-9CE8-F26B4BFA888A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{099C8019-BF4E-4706-9CE8-F26B4BFA888A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39E02DE9-F1C1-4509-B35D-DCB05F878BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39E02DE9-F1C1-4509-B35D-DCB05F878BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39E02DE9-F1C1-4509-B35D-DCB05F878BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39E02DE9-F1C1-4509-B35D-DCB05F878BC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE17D882-BF9F-4E01-87DD-6A8BDAC458AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE17D882-BF9F-4E01-87DD-6A8BDAC458AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE17D882-BF9F-4E01-87DD-6A8BDAC458AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE17D882-BF9F-4E01-87DD-6A8BDAC458AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB96AE57-40BF-4C90-977B-4838441B13C8}
+	EndGlobalSection
+EndGlobal
