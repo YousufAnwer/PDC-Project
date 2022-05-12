@@ -1,9 +1,6 @@
 ﻿using DataAccessLayer.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DataAccessLayer.Data
 {
@@ -14,6 +11,6 @@ namespace DataAccessLayer.Data
         {
         }
         public DbSet<User> AppUsers { get; set; }
-       // public DbSet<Note> AppNotes { get; set; }
+        public DbSet<Task> AppTask { get; set; }
     }
 }

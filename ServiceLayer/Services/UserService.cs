@@ -1,6 +1,8 @@
-﻿using DataAccessLayer.Models;
+﻿using DataAccessLayer.Dtos.UserDtos;
+using DataAccessLayer.Models;
 using DataAccessLayer.Repository.IRepository;
 using ServiceLayer.Services.IServices;
+using System;
 using System.Collections.Generic;
 
 namespace ServiceLayer.Services
@@ -26,6 +28,20 @@ namespace ServiceLayer.Services
         public IEnumerable<User> GetAll()
         {
             return _userRepository.GetAll();
+        }
+
+        public User GetByNameAndPassword(LoginUserDto dto)
+        {
+            var user = _userRepository.GetByNameAndPassword(dto);
+            if (user==null)
+            {
+                throw new NullReferenceException("User Not Found");
+            }
+            else
+            {
+                return user;
+            }
+            
         }
 
         public void Insert(User User)

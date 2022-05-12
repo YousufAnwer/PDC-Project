@@ -32,15 +32,20 @@ namespace UI
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
-            
-            
-            
-            
-            //
+
+
+
             #region InjectDependencies
+
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IUserRepository, UserRepository>();
-           #endregion
+            
+
+
+            services.AddScoped<ITaskService, TaskService>();
+            services.AddScoped<ITaskRepository, TaskRepository>();
+
+            #endregion
 
 
 
@@ -63,7 +68,6 @@ namespace UI
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
 
             app.UseAuthentication();

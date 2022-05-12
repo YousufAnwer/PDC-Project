@@ -1,43 +1,44 @@
 ﻿using DataAccessLayer.Data;
-using DataAccessLayer.Dtos.UserDtos;
 using DataAccessLayer.Models;
 using DataAccessLayer.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace DataAccessLayer.Repository
 {
-    public class UserRepository : IUserRepository
+    public class TaskRepository : ITaskRepository
     {
         private readonly ApplicationDbContext _context;
-        public UserRepository(ApplicationDbContext context)
+        public TaskRepository(ApplicationDbContext context)
         {
             _context = context;
         }
-        public IEnumerable<User> GetAll()
+        public IEnumerable<Task> GetAll()
         {
-            return _context.AppUsers.ToList();
+            var data = _context.AppTask.ToList().OrderByDescending(x=>x.Id);
+            return data;
         }
-        public User Get(int id)
+        public Task Get(int id)
         {
-            return _context.AppUsers.Find(id);
+            return _context.AppTask.Find(id);
         }
-        public void Insert(User User)
+        public void Insert(Task Task)
         {
-            _context.AppUsers.Add(User);
+            _context.AppTask.Add(Task);
             Save();
         }
-        public void Delete(int UserID)
+        public void Delete(int TaskID)
         {
-            User User = _context.AppUsers.Find(UserID);
-            _context.AppUsers.Remove(User);
+            Task Task = _context.AppTask.Find(TaskID);
+            _context.AppTask.Remove(Task);
             Save();
         }
-        public void Update(User User)
+        public void Update(Task Task)
         {
-            _context.Entry(User).State = EntityState.Modified;
+            _context.Entry(Task).State = EntityState.Modified;
             Save();
         }
         public void Save()
@@ -62,11 +63,17 @@ namespace DataAccessLayer.Repository
             GC.SuppressFinalize(this);
         }
 
-        public User GetByNameAndPassword(LoginUserDto dto)
+        public List<Task> GetByUserId(int Id)
         {
-            var user = _context.AppUsers.FirstOrDefault(x => x.Name == dto.Name && x.Password == dto.Password);
-            return user;
-
+            var list = _context.AppTask.Where(x => x.UserId == Id).ToList();
+            return list;
         }
+
+        //public Task GetByNameAndPassword(LoginTaskDto dto)
+        //{
+        //    var Task = _context.AppTask.FirstOrDefault(x => x.Name == dto.Name && x.Password == dto.Password);
+        //    return Task;
+
+        //}
     }
 }

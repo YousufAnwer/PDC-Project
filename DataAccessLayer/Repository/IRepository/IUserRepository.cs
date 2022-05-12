@@ -1,7 +1,6 @@
-﻿using DataAccessLayer.Models;
-using System;
+﻿using DataAccessLayer.Dtos.UserDtos;
+using DataAccessLayer.Models;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DataAccessLayer.Repository.IRepository
 {
@@ -9,6 +8,7 @@ namespace DataAccessLayer.Repository.IRepository
     {
         IEnumerable<User> GetAll();
         User Get(int Id);
+        User GetByNameAndPassword(LoginUserDto dto);
         void Insert(User User);
         void Delete(int Id);
         void Update(User User);
